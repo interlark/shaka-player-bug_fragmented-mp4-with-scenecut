@@ -6,7 +6,7 @@
 ![Image of Seeks](https://raw.githubusercontent.com/interlark/shaka-player-bug_fragmented-mp4-with-scenecut/master/images/seeks.png)
 
 ## Zoom in
-Let's see some scenecut places closer on example of BBB.
+Let's see some places closer on example of BBB.
 
 ![Image of Zoom in Legend](https://raw.githubusercontent.com/interlark/shaka-player-bug_fragmented-mp4-with-scenecut/master/images/an_legend.png)
 
