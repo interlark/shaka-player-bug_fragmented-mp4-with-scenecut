@@ -7,6 +7,7 @@
 
 ## Zoom in
 Let's see some scenecut places closer on example of BBB.
+
 ![Image of Zoom in Legend](https://raw.githubusercontent.com/interlark/shaka-player-bug_fragmented-mp4-with-scenecut/master/images/an_legend.png)
 
 ### Point 176.17
@@ -28,4 +29,4 @@ Let's see some scenecut places closer on example of BBB.
 ![Image of Zoom in 1-NS](https://raw.githubusercontent.com/interlark/shaka-player-bug_fragmented-mp4-with-scenecut/master/images/an_3_no-scenecut.png)
 
 ## Demo
-Check the demo on https://shaka-player-bug_fragmented-mp4-with-scenecut.github.io with Firefox browser.
+Check the demo on https://interlark.github.io/shaka-player-bug_fragmented-mp4-with-scenecut with Firefox browser.
