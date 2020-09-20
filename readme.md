@@ -28,5 +28,8 @@ Let's see some places closer on example of BBB.
 #### Without scenecut
 ![Image of Zoom in 1-NS](https://raw.githubusercontent.com/interlark/shaka-player-bug_fragmented-mp4-with-scenecut/master/images/an_3_no-scenecut.png)
 
+## Conclusion
+Somehow Shaka player skips I-frames what make a decoder missing back references for next frames which cause visual glitches on Windows (when decoder tries to rebuild B\P frames) and freezes on Linux (when decoders just wait for another I\IDR frames)
+
 ## Demo
 Check the demo on https://interlark.github.io/shaka-player-bug_fragmented-mp4-with-scenecut with Firefox browser.
