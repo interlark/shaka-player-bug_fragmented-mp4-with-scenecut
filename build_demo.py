@@ -115,17 +115,17 @@ def build_index_html(data):
         f_html.write(content)
 
 if __name__ == '__main__':
-    # create_dirs()
+    create_dirs()
     with open(DATA_JSON, 'r') as f_data:
         data = json.load(f_data)
         build_index_html(data)
         for entry in data:
             print(f'Workin on', entry['name'], file=sys.stderr)
             entry_dir = os.path.join(VIDEO_DIR, entry['dir'])
-            # os.mkdir(entry_dir)
-            # os.chdir(entry_dir)
-            # download_file(entry['url'], entry['filename'])
-            # encode_video(entry['filename'], entry['fps'])
+            os.mkdir(entry_dir)
+            os.chdir(entry_dir)
+            download_file(entry['url'], entry['filename'])
+            encode_video(entry['filename'], entry['fps'])
             for player in ('shaka', 'hlsjs'):
                 build_video_html(entry, player, no_scenecut=False)
                 build_video_html(entry, player, no_scenecut=True)
