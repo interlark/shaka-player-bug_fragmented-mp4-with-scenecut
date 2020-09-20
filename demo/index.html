@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Firefox + Shaka player bug - Index</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    
+  </head>
+  <body>
+    <div class="container text-center">
+    
+    
+  <h1 class="title">Firefox+Shaka Player Bug Demonstration</h1>
+  <span class="desc">Shaka player (v3.0.4) can not properly seek to some time points with Firefox browser. On Windows such timeline seeks cause visual glitches, on Linux it keeps video freezed while audio is playing.</span>
+  
+  <div class="card-group bg-red">
+    <h3>With scenecut</h3>
+    
+    <div class="card card-custom text-center">
+      <div class="card-body">
+          <h5 class="card-title">Big Buck Bunny</h5>
+          <a href="video_shaka_1.html" class="card-link bug-url">Play with Shaka Player</a>
+          <a href="video_hlsjs_1.html" class="card-link">Play with hls.js</a>
+      </div>
+    </div>
+    
+    <div class="card card-custom text-center">
+      <div class="card-body">
+          <h5 class="card-title">The first Blender Open Movie from 2006</h5>
+          <a href="video_shaka_2.html" class="card-link bug-url">Play with Shaka Player</a>
+          <a href="video_hlsjs_2.html" class="card-link">Play with hls.js</a>
+      </div>
+    </div>
+    
+    <div class="card card-custom text-center">
+      <div class="card-body">
+          <h5 class="card-title">Sintel by the Blender Foundation</h5>
+          <a href="video_shaka_3.html" class="card-link bug-url">Play with Shaka Player</a>
+          <a href="video_hlsjs_3.html" class="card-link">Play with hls.js</a>
+      </div>
+    </div>
+    
+  </div>
+  <div class="card-group bg-green">
+    <h3>Without scenecut</h3>
+    
+    <div class="card card-custom text-center">
+      <div class="card-body">
+          <h5 class="card-title">Big Buck Bunny</h5>
+          <a href="video_shaka_1_without_scenecut.html" class="card-link">Play with Shaka Player</a>
+          <a href="video_hlsjs_1_without_scenecut.html" class="card-link">Play with hls.js</a>
+      </div>
+    </div>
+    
+    <div class="card card-custom text-center">
+      <div class="card-body">
+          <h5 class="card-title">The first Blender Open Movie from 2006</h5>
+          <a href="video_shaka_2_without_scenecut.html" class="card-link">Play with Shaka Player</a>
+          <a href="video_hlsjs_2_without_scenecut.html" class="card-link">Play with hls.js</a>
+      </div>
+    </div>
+    
+    <div class="card card-custom text-center">
+      <div class="card-body">
+          <h5 class="card-title">Sintel by the Blender Foundation</h5>
+          <a href="video_shaka_3_without_scenecut.html" class="card-link">Play with Shaka Player</a>
+          <a href="video_hlsjs_3_without_scenecut.html" class="card-link">Play with hls.js</a>
+      </div>
+    </div>
+    
+  </div>
+  <a href="#">Github</a>
+
+    </div>
+  </body>
+  
+  
+  <style>
+    .card-custom {
+      background-color: rgba(0, 0, 0, .1);
+      margin-bottom: 1rem !important;
+    }
+    .card-group {
+      display: block;
+      padding: .75rem;
+      background: rgba(0, 0, 0, .05);
+      border-radius: .25rem;
+      border: 1px solid rgba(0, 0, 0, .1);
+      margin-bottom: 2rem;
+    }
+    .bg-red {
+      background: rgba(255,0,0,.05);
+    }
+    .bg-green {
+    background: rgba(0,255,0,.05);
+    }
+    .bug-url {
+      color: #dd4b4b;
+    }
+    .desc {
+      font-style: italic;
+      color: rgba(0,0,0,.6);
+      font-size: 1.3rem;
+      margin-bottom: 4rem;
+      display: block;
+    }
+  </style>
+
+</html>

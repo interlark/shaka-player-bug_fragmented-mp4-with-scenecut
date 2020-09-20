@@ -1,0 +1,25 @@
+{% extends "video_base.j2" %}
+
+{% block extra_js %}
+{{ super() }}
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script>
+  // Check to see if the browser supports the basic APIs HLS.js needs.
+  if (Hls.isSupported()) {
+    // Everything looks good!
+    var video = document.getElementById('video');
+    {% if no_scenecut %}
+    var videoSrc = 'videos/{{entry.dir}}/master-no-scenecut.m3u8';
+    {% else %}
+    var videoSrc = 'videos/{{entry.dir}}/master.m3u8';
+    {% endif %}
+    var hls = new Hls();
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+    window.hls = hls;
+  } else {
+    // This browser does not have the minimum set of APIs we need.
+    console.error('Browser not supported!');
+  }
+</script>
+{% endblock extra_js %}

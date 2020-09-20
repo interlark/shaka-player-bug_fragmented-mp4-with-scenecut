@@ -1,0 +1,66 @@
+{% extends "base.j2" %}
+
+{% block extra_js %}
+  {{ super() }}
+  <style>
+    .card-custom {
+      background-color: rgba(0, 0, 0, .1);
+      margin-bottom: 1rem !important;
+    }
+    .card-group {
+      display: block;
+      padding: .75rem;
+      background: rgba(0, 0, 0, .05);
+      border-radius: .25rem;
+      border: 1px solid rgba(0, 0, 0, .1);
+      margin-bottom: 2rem;
+    }
+    .bg-red {
+      background: rgba(255,0,0,.05);
+    }
+    .bg-green {
+    background: rgba(0,255,0,.05);
+    }
+    .bug-url {
+      color: #dd4b4b;
+    }
+    .desc {
+      font-style: italic;
+      color: rgba(0,0,0,.6);
+      font-size: 1.3rem;
+      margin-bottom: 4rem;
+      display: block;
+    }
+  </style>
+{% endblock extra_js %}
+
+{% block content %}
+  <h1 class="title">Firefox+Shaka Player Bug Demonstration</h1>
+  <span class="desc">Shaka player (v3.0.4) can not properly seek to some time points with Firefox browser. On Windows such timeline seeks cause visual glitches, on Linux it keeps video freezed while audio is playing.</span>
+  {{ super() }}
+  <div class="card-group bg-red">
+    <h3>With scenecut</h3>
+    {% for entry in data %}
+    <div class="card card-custom text-center">
+      <div class="card-body">
+          <h5 class="card-title">{{entry.name}}</h5>
+          <a href="video_shaka_{{entry.id}}.html" class="card-link bug-url">Play with Shaka Player</a>
+          <a href="video_hlsjs_{{entry.id}}.html" class="card-link">Play with hls.js</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="card-group bg-green">
+    <h3>Without scenecut</h3>
+    {% for entry in data %}
+    <div class="card card-custom text-center">
+      <div class="card-body">
+          <h5 class="card-title">{{entry.name}}</h5>
+          <a href="video_shaka_{{entry.id}}_without_scenecut.html" class="card-link">Play with Shaka Player</a>
+          <a href="video_hlsjs_{{entry.id}}_without_scenecut.html" class="card-link">Play with hls.js</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <a href="https://github.com/interlark/shaka-player-bug_fragmented-mp4-with-scenecut">Github</a>
+{% endblock content %}

@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Big Buck Bunny",
+    "dir": "BBB",
+    "filename": "BigBuckBunny.mp4",
+    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "fps": 24,
+    "times": [56.13, 112.71, 146.42, 176.17, 180.55, 194.71, 270.38, 322.21, 472.92, 480.21]
+  },
+  {
+    "id": 2,
+    "name": "The first Blender Open Movie from 2006",
+    "dir": "ElephantsDream",
+    "filename": "ElephantsDream.mp4",
+    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    "fps": 24,
+    "times": [30.12, 98.13, 130.67, 178.30, 216.59, 244.51, 428.63, 440.67, 520.71, 472.21]
+  },
+  {
+    "id": 3,
+    "name": "Sintel by the Blender Foundation",
+    "dir": "Sintel",
+    "filename": "Sintel.mp4",
+    "url": "http://www.peach.themazzone.com/durian/movies/sintel-1280-surround.mp4",
+    "fps": 24,
+    "times": [48.71, 60.63, 126.34, 180.09, 252.96, 306.30, 314.96, 442.38, 456.26, 588.05]
+  }
+]

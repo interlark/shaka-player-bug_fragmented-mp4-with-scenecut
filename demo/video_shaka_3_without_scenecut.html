@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Firefox + Shaka player bug - Sintel by the Blender Foundation (shaka)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+  
+    
+  <style>
+    #video {
+      width: 100%;
+    }
+    .seek-link {
+      font-size: 1.5rem;
+      padding: 0.25rem;
+    }
+    .back-link {
+      position: absolute;
+      top: 1rem;
+    }
+  </style>
+
+  </head>
+  <body>
+    <div class="container text-center">
+       
+    <h1 class="title">Sintel by the Blender Foundation (shaka)</h1>
+    
+    
+  
+  <a href="index.html" class="back-link">Back to Index</a>
+  <video id="video" controls autoplay></video>
+  <h3>Seek to...</h3>
+  
+  <a href="#" class="seek-link" onclick="seekTo(48.71)">48.71</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(60.63)">60.63</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(126.34)">126.34</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(180.09)">180.09</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(252.96)">252.96</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(306.3)">306.3</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(314.96)">314.96</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(442.38)">442.38</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(456.26)">456.26</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(588.05)">588.05</a>
+  
+
+    </div>
+  </body>
+  
+
+  <script>
+    function seekTo(time) {
+      var video = document.getElementById('video');
+      video.currentTime = time;
+    }
+  </script>
+  
+  <script src="https://github.com/videojs/mux.js/releases/download/v5.0.0/mux.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.0.4/shaka-player.compiled.debug.js"></script>
+<script>
+  
+  var manifestUri = 'videos/Sintel/master-no-scenecut.m3u8';
+  
+
+  async function initPlayer() {
+        shaka.media.ManifestParser.registerParserByExtension("m3u8", shaka.hls.HlsParser);
+    shaka.media.ManifestParser.registerParserByMime("Application/vnd.apple.mpegurl", shaka.hls.HlsParser);
+    // Create a Player instance.
+    const video = document.getElementById('video');
+    const player = new shaka.Player(video);
+
+    // Attach player to the window to make it easy to access in the JS console.
+    window.player = player;
+
+    // Listen for error events.
+    player.addEventListener('error', onErrorEvent);
+
+    // Try to load a manifest.
+    // This is an asynchronous process.
+    try {
+      await player.load(manifestUri);
+      // This runs if the asynchronous load is successful.
+      console.log('The video has now been loaded!');
+    } catch (e) {
+      // onError is executed if the asynchronous load fails.
+      onError(e);
+    }
+  }
+
+  function onErrorEvent(event) {
+    // Extract the shaka.util.Error object from the event.
+    onError(event.detail);
+  }
+
+  function onError(error) {
+    // Log the error.
+    console.error('Error code', error.code, 'object', error);
+  }
+
+  // Install built-in polyfills to patch browser incompatibilities.
+  shaka.polyfill.installAll();
+
+  // Check to see if the browser supports the basic APIs Shaka needs.
+  if (shaka.Player.isBrowserSupported()) {
+    // Everything looks good!
+    initPlayer();
+  } else {
+    // This browser does not have the minimum set of APIs we need.
+    console.error('Browser not supported!');
+  }
+</script>
+
+</html>

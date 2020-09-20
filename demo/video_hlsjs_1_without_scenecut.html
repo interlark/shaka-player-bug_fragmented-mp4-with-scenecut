@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Firefox + Shaka player bug - Big Buck Bunny (hlsjs)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+  
+    
+  <style>
+    #video {
+      width: 100%;
+    }
+    .seek-link {
+      font-size: 1.5rem;
+      padding: 0.25rem;
+    }
+    .back-link {
+      position: absolute;
+      top: 1rem;
+    }
+  </style>
+
+  </head>
+  <body>
+    <div class="container text-center">
+       
+    <h1 class="title">Big Buck Bunny (hlsjs)</h1>
+    
+    
+  
+  <a href="index.html" class="back-link">Back to Index</a>
+  <video id="video" controls autoplay></video>
+  <h3>Seek to...</h3>
+  
+  <a href="#" class="seek-link" onclick="seekTo(56.13)">56.13</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(112.71)">112.71</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(146.42)">146.42</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(176.17)">176.17</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(180.55)">180.55</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(194.71)">194.71</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(270.38)">270.38</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(322.21)">322.21</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(472.92)">472.92</a>
+  
+  <a href="#" class="seek-link" onclick="seekTo(480.21)">480.21</a>
+  
+
+    </div>
+  </body>
+  
+
+  <script>
+    function seekTo(time) {
+      var video = document.getElementById('video');
+      video.currentTime = time;
+    }
+  </script>
+  
+  <script src="https://github.com/videojs/mux.js/releases/download/v5.0.0/mux.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script>
+  // Check to see if the browser supports the basic APIs HLS.js needs.
+  if (Hls.isSupported()) {
+    // Everything looks good!
+    var video = document.getElementById('video');
+    
+    var videoSrc = 'videos/BBB/master-no-scenecut.m3u8';
+    
+    var hls = new Hls();
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+    window.hls = hls;
+  } else {
+    // This browser does not have the minimum set of APIs we need.
+    console.error('Browser not supported!');
+  }
+</script>
+
+</html>

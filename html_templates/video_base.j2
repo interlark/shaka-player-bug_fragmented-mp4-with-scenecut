@@ -1,0 +1,39 @@
+{% extends "base.j2" %}
+
+{% block extra_styles %}
+  {{ super() }}
+  <style>
+    #video {
+      width: 100%;
+    }
+    .seek-link {
+      font-size: 1.5rem;
+      padding: 0.25rem;
+    }
+    .back-link {
+      position: absolute;
+      top: 1rem;
+    }
+  </style>
+{% endblock extra_styles %}
+
+{% block content %}
+  {{ super() }}
+  <a href="index.html" class="back-link">Back to Index</a>
+  <video id="video" controls autoplay></video>
+  <h3>Seek to...</h3>
+  {% for time in entry.times %}
+  <a href="#" class="seek-link" onclick="seekTo({{time}})">{{time}}</a>
+  {% endfor %}
+{% endblock content %}
+
+{% block extra_js %}
+  <script>
+    function seekTo(time) {
+      var video = document.getElementById('video');
+      video.currentTime = time;
+    }
+  </script>
+  {{ super() }}
+  <script src="https://github.com/videojs/mux.js/releases/download/v5.0.0/mux.js"></script>
+{% endblock extra_js %}
