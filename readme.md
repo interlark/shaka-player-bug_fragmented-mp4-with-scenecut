@@ -1,6 +1,6 @@
 ## How to reproduce the bug:
-1) Encode video stream with scenecut parameter (you can run build_demo.py or use already builded one)
-2) Open the stream with Firefox browser and shaka player (you can open 3 demo links shown below)
+1) Encode video stream with scenecut parameter (you can run build_demo.py or use already built one)
+2) Open the stream with Firefox browser and Shaka player (you can open 3 demo links shown below)
 ![Image of Links](https://raw.githubusercontent.com/interlark/shaka-player-bug_fragmented-mp4-with-scenecut/master/images/links.png)
 3) Play video and seek through given places by clicking links shown below, you'll notice video glitches (on Windows) or video freezing while audo is playing (on Linux)
 ![Image of Seeks](https://raw.githubusercontent.com/interlark/shaka-player-bug_fragmented-mp4-with-scenecut/master/images/seeks.png)
