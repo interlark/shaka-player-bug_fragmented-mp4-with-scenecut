@@ -33,3 +33,6 @@ Somehow Shaka player skips I-frames what make a decoder missing back references 
 
 ## Demo
 Check the demo on https://interlark.github.io/shaka-player-bug_fragmented-mp4-with-scenecut with Firefox browser.
+
+## Screencast
+https://youtu.be/P_aWcyjM8bM
