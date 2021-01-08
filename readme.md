@@ -32,7 +32,7 @@ Let's see some places closer on example of BBB.
 Somehow Shaka player skips I-frames what make a decoder missing back references for next frames which cause visual glitches on Windows (when decoder tries to rebuild B\P frames) and freezes on Linux (when decoders just wait for another I\IDR frames)
 
 ## Demo
-Check the demo on https://interlark.github.io/shaka-player-bug_fragmented-mp4-with-scenecut with Firefox browser.
+Check the demo on https://interlark.github.io/shaka-player-bug_fragmented-mp4-with-scenecut/demo/index.html with Firefox browser.
 
 ## Screencast
 https://youtu.be/P_aWcyjM8bM
